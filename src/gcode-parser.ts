@@ -100,8 +100,9 @@ export class Parser {
   metadata: Metadata = { thumbnails: {} };
 
   parseGCode(input: string | string[]): { layers: Layer[]; metadata: Metadata } {
+    console.log('parseGCode');
     const lines = Array.isArray(input) ? input : input.split('\n');
-    console.log('lines :>> ', lines);
+    // console.log('lines :>> ', lines);
 
     this.lines = this.lines.concat(lines);
 
@@ -115,6 +116,7 @@ export class Parser {
       this.metadata.thumbnails[key] = value;
     }
 
+    console.log('end parseGCode');
     return { layers: this.layers, metadata: this.metadata };
   }
 
