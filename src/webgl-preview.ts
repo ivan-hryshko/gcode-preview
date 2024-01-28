@@ -204,7 +204,7 @@ export class WebGLPreview {
   }
 
   animate(): void {
-    console.log('animate');
+    // console.log('animate');
     requestAnimationFrame(() => this.animate());
     this.controls.update();
     this.renderer.render(this.scene, this.camera);

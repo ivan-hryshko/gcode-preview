@@ -107,8 +107,10 @@ export class Parser {
     this.lines = this.lines.concat(lines);
 
     const commands = this.lines2commands(lines);
+    console.log('commands :>> ', commands);
 
     this.groupIntoLayers(commands);
+    console.log('this.layers :>> ', this.layers);
 
     // merge thumbs
     const thumbs = this.parseMetadata(commands.filter((cmd) => cmd.comment)).thumbnails;
